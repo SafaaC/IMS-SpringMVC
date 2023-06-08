@@ -13,12 +13,70 @@
        http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/mvc
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
-       
-       <bean class= "org.springframework.web.servlet.view.InternalResourceViewResolver" name="viewResolver">
-       <property name="prefix" value="/WEB-INF/view/"></property>
-       <property name="suffix" value="/*.jsp"></property>
-       
-       </bean>
-       
-       
- </beans>
+
+	<tx:annotation-driven />
+
+	<!-- view Resolver -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		name="viewResolver">
+		<property name="prefix" value="/WEB-INF/view/"></property>
+		<property name="suffix" value="/*.jsp"></property>
+	</bean>
+
+	<!-- data source which is given to local session factory -->
+	<bean name="myds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/springorm" />
+
+		<property name="username" value="root" />
+
+		<property name="password" value="root" />
+		</bean>
+		
+		<!-- local session factory which is given to session factory property of hibernate template -->
+		<bean
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean"
+		name="factory">
+
+		<!-- data source -->
+		<property name="dataSource" ref="myds"></property>
+
+		<!-- hibernate properties -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="org.hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		
+		<!-- annotated class -->
+		<property name="annotatedClasses">
+			<list>
+				<value>
+					springmvc.model.Product
+				</value>
+				
+			</list>
+		</property>
+	</bean>
+	
+	<!-- hibernateTemplate -->
+	<bean class="org.springframework.orm.hibernate5.HibernateTemplate"
+		name="hibernateTemplate">
+		<property name="sessionFactory" ref="factory"></property>
+	</bean>
+	<!-- To perform write operation -->
+	<bean
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager"
+		name="transactionManager">
+		<property name="sessionFactory" ref="factory"></property>
+	</bean>
+	
+</beans>
