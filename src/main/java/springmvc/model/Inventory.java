@@ -12,11 +12,11 @@ public class Inventory {
 	private int productId;
 	private String productName;
 	private String sellerName;
-	private String batchNumber;
+	private int batchNumber;
 	private String purchaseDate;
-	private String Quantity;
-	private String purchaseRate;
-	private String sellingRate;
+	private int Quantity;
+	private double purchaseRate;
+	private double  sellingRate;
 	public int getProductId() {
 		return productId;
 	}
@@ -35,10 +35,10 @@ public class Inventory {
 	public void setSellerName(String sellerName) {
 		this.sellerName = sellerName;
 	}
-	public String getBatchNumber() {
+	public int getBatchNumber() {
 		return batchNumber;
 	}
-	public void setBatchNumber(String batchNumber) {
+	public void setBatchNumber(int batchNumber) {
 		this.batchNumber = batchNumber;
 	}
 	public String getPurchaseDate() {
@@ -47,22 +47,22 @@ public class Inventory {
 	public void setPurchaseDate(String purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
-	public String getQuantity() {
+	public int getQuantity() {
 		return Quantity;
 	}
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		Quantity = quantity;
 	}
-	public String getPurchaseRate() {
+	public double getPurchaseRate() {
 		return purchaseRate;
 	}
-	public void setPurchaseRate(String purchaseRate) {
+	public void setPurchaseRate(double purchaseRate) {
 		this.purchaseRate = purchaseRate;
 	}
-	public String getSellingRate() {
+	public double getSellingRate() {
 		return sellingRate;
 	}
-	public void setSellingRate(String sellingRate) {
+	public void setSellingRate(double sellingRate) {
 		this.sellingRate = sellingRate;
 	}
 	public String getExpiryDate() {

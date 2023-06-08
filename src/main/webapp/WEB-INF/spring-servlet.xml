@@ -15,7 +15,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 	<tx:annotation-driven />
-
+	<context:component-scan base-package="springmvc"></context:component-scan>
 	<!-- view Resolver -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -61,6 +61,15 @@
 			<list>
 				<value>
 					springmvc.model.Product
+				</value>
+				<value>
+					springmvc.model.Customer
+				</value>
+				<value>
+					springmvc.model.Seller
+				</value>
+				<value>
+					springmvc.model.Sale
 				</value>
 				
 			</list>
