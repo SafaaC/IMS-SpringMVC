@@ -5,18 +5,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
-public class Inventory {
+public class Purchase {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int productId;
-	private String productName;
 	private String sellerName;
 	private int batchNumber;
+	private String productName;
+	private int quantity;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private String purchaseDate;
-	private int Quantity;
 	private double purchaseRate;
 	private double  sellingRate;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private String expiryDate;
+	
 	public int getProductId() {
 		return productId;
 	}
@@ -48,10 +54,10 @@ public class Inventory {
 		this.purchaseDate = purchaseDate;
 	}
 	public int getQuantity() {
-		return Quantity;
+		return quantity;
 	}
 	public void setQuantity(int quantity) {
-		Quantity = quantity;
+		this.quantity = quantity;
 	}
 	public double getPurchaseRate() {
 		return purchaseRate;
@@ -66,11 +72,11 @@ public class Inventory {
 		this.sellingRate = sellingRate;
 	}
 	public String getExpiryDate() {
-		return ExpiryDate;
+		return expiryDate;
 	}
 	public void setExpiryDate(String expiryDate) {
-		ExpiryDate = expiryDate;
+		this.expiryDate = expiryDate;
 	}
-	private String ExpiryDate;
+	
 
 }

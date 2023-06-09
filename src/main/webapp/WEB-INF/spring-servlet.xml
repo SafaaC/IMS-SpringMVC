@@ -21,7 +21,7 @@
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		name="viewResolver">
 		<property name="prefix" value="/WEB-INF/view/"></property>
-		<property name="suffix" value="/*.jsp"></property>
+		<property name="suffix" value=".jsp"></property>
 	</bean>
 
 	<!-- data source which is given to local session factory -->
@@ -60,7 +60,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>
-					springmvc.model.Product
+					springmvc.model.Purchase
 				</value>
 				<value>
 					springmvc.model.Customer
@@ -68,9 +68,7 @@
 				<value>
 					springmvc.model.Seller
 				</value>
-				<value>
-					springmvc.model.Sale
-				</value>
+				
 				
 			</list>
 		</property>

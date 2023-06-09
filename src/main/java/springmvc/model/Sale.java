@@ -1,11 +1,6 @@
 package springmvc.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
-@Entity
 public class Sale {
-	@Id
 	private String customerName;
 	private String productName;
 	private int quantity;
