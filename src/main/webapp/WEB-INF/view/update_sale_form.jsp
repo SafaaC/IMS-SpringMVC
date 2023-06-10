@@ -26,31 +26,40 @@
 <body>
 	<h1 class="text-center mb-3">Sale Counter</h1>
 	<div class="container mt-5 w-75">
-		<form action="salesave" method="post">
+		<form action="sales" method="post">
 			<div class="form-group">
 				<label for="date">Date</label> <input type="text"
 					class="form-control" id="date" placeholder="dd/mm/yyyy"
-					name="date" >
+					name="date" value="${s.date}" required="required">
 			</div>
 			<div class="form-group">
 				<label for="customerName">Customer Name</label> <input type="text"
 					class="form-control" id="customerName" placeholder="customerName"
-					name="customerName" required>
+					name="customerName" value="${s.customerName}" required>
+			</div>
+			<div class="form-group">
+				<label for="productName">Product Name</label> <input type="text"
+					class="form-control" id="productName" placeholder="productName"
+					name="productName" value="${s.productName}" required readonly>
 			</div>
 			
 			
 			<div class="form-group">
 				<label for="pid">Product Id</label> <input type="text"
-					class="form-control" id="pid"
-					placeholder="Enter productId" name="pId" required>
+					class="form-control" id="pId"
+					placeholder="Enter productId" name="pId" value="${s.pId}" required>
 			</div>
 			<div class="form-group">
 				<label for="quantity">Quantity</label> <input type="text"
-					class="form-control" id="quantity" name="quantity" required>
+					class="form-control" id="quantity" name="quantity" value="${s.quantity}" required>
+			</div>
+			<div class="form-group">
+				<label for="amount">Amount</label> <input type="text"
+					class="form-control" id="amount" name="amount" value="${s.amount}" required readonly>
 			</div>
 
 			<div class="container text-center  mb-5">
-				<button type="submit" class="btn btn-success">Add</button>
+				<button type="submit" class="btn btn-success">Update</button>
 			</div>
 
 		</form>

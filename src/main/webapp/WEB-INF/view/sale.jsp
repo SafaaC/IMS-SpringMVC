@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
@@ -19,45 +19,43 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<title>Inventory</title>
+<title>Sale</title>
 </head>
 <body>
-	<h1>Inventory</h1>
-
+	<h1>Sale Details</h1>
+	<form action="saleinventory" method="post">
 	<table class="table">
 		<thead>
 			<tr>
 				<th scope="col">Product Id</th>
-				<th scope="col">Seller Name</th>
-				<th scope="col">Batch Number</th>
+				<th scope="col">Date</th>
+				<th scope="col">Customer Name</th>
 				<th scope="col">Product Name</th>
 				<th scope="col">Quantity</th>
-				<th scope="col">Purchase Date</th>
-				<th scope="col">Purchase Rate</th>
-				<th scope="col">Selling Rate</th>
-				<th scope="col">Expiry Date</th>
+				<th scope="col">Amount</th>
 				<th scope="col">Action</th>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${purchases }" var="p">
+			<c:forEach items="${sales}" var="s">
 				<tr>
-					<td>${p.productId }</td>
-					<td>${p.sellerName }</td>
-					<td>${p.batchNumber }</td>
-					<td>${p.productName }</td>
-					<td>${p.quantity }</td>
-					<td>${p.purchaseDate }</td>
-					<td>&#x20B9; ${p.purchaseRate }</td>
-					<td>&#x20B9;${p.sellingRate }</td>
-					<td>${p.expiryDate }</td>
-					<td><a href="delete/${p.productId}"><i class="fa-solid fa-trash-can"></i></a> &nbsp;
-					<a href="update/${p.productId}"><i class="fa-regular fa-pen-to-square"></i></a></td>
+					<td>${s.pId }</td>
+					<td>${s.date }</td>
+					<td>${s.customerName }</td>
+					<td>${s.productName }</td>
+					<td>${s.quantity }</td>
+					<td>&#x20B9; ${s.amount}</td>
+					<td><a href="deletesale/${s.pId}"><i class="fa-solid fa-trash-can"></i></a> &nbsp;
+					<a href="updatesale/${s.pId}"><i class="fa-regular fa-pen-to-square"></i></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
-
+	<div class="container text-center  mb-5">
+				<button type="submit" class="btn btn-success">Submit</button>
+			</div>
+	
+	</form>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

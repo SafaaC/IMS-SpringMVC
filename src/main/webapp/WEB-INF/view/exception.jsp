@@ -1,16 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Success</title>
+<title>Exception</title>
 </head>
 <body>
-	
-	<h2> ${mssg}
-	</h2>
-	<a href="home.jsp">Return to home page</a>
+	<h1>Oops!!! Sorry</h1>
+	<h2>Somethinng went wrong</h2>
+	<button onclick="history.back()">Go Back</button>
 </body>
 </html>

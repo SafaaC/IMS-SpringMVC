@@ -43,7 +43,7 @@
 			<div class="form-group">
 				<label for="batchNumber">Batch Number</label> <input type="text"
 					class="form-control" id="batchNumber" placeholder="batchNumber"
-					name="batchNumber" value="${p.batchNumber}" required>
+					name="batchNumber " value="${p.batchNumber}" required>
 			</div>
 			<div class="form-group">
 				<label for="productName">Product Name</label> <input type="text"

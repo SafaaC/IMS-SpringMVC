@@ -68,6 +68,9 @@
 				<value>
 					springmvc.model.Seller
 				</value>
+				<value>
+					springmvc.model.Sale
+				</value>
 				
 				
 			</list>

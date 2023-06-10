@@ -40,6 +40,39 @@ public class PurchaseDao {
 		this.hibernateTemplate.delete(p);
 	}
 	
+	//validate id
+	@Transactional
+	public boolean searchPurchase(int productId) {
+		Purchase p= this.hibernateTemplate.get(Purchase.class,productId);
+		if(p==null) {
+			return false;
+		}
+		return true;
+	}
+	
+	//get product name from id
+	@Transactional
+	public String getNameById(int productId) {
+		List<Purchase> purchases=this.hibernateTemplate.loadAll(Purchase.class);
+		for(Purchase purchase:purchases) {
+			if(purchase.getProductId()==productId) {
+				return purchase.getProductName();
+			}	
+		}
+		return null;
+	}
+	
+	//get product selling rate from id
+	@Transactional
+	public double getPriceById(int productId) {
+		List<Purchase> purchases=this.hibernateTemplate.loadAll(Purchase.class);
+		for(Purchase purchase:purchases) {
+			if(purchase.getProductId()==productId) {
+				return purchase.getSellingRate();
+			}	
+		}
+		return 0;
+	}
 	
 	
 }
