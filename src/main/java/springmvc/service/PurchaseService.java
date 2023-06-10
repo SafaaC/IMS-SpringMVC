@@ -33,9 +33,12 @@ public class PurchaseService {
 
 		this.purchaseDao.deletePurchase(productId);
 	}
+	public Purchase getBySName(String productId) {
+		return this.purchaseDao.getbySName(productId);
+	}
 
-	public boolean searchPurchase(int productId) {
-		return this.purchaseDao.searchPurchase(productId);
+	public Purchase getByName(String productName) {
+		return this.purchaseDao.getByName(productName);
 	}
 
 	public String getNameById(int productId) {

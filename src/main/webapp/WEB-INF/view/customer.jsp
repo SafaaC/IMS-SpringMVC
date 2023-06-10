@@ -7,7 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+<nav>
+  <ul>
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
+<section>
+	
 		<form action="customer">
+		<h1>Customer</h1>
 			<div class="form-group">
 				<label for="customerName">Customer Name</label> <input type="text"
 					class="form-control" id="customerName" placeholder="Name"
@@ -21,6 +30,14 @@
 				<label for="customerAddress">Customer Address</label> <input type="text"
 					class="form-control" id="customerAddress" 
 					name="customerAddress" required></div>
+					<div class="container text-center  mb-5">
+				<button type="submit" class="btn btn-success">Add</button>
+			</div>
 		</form>
+		<form action="customers">
+		<div class="container text-center  mb-5">
+				<button type="submit" class="btn btn-success" onclick="">Show All Customers</button>
+			</div></form>
+</section>
 </body>
 </html>

@@ -38,7 +38,7 @@
 					name="sellerName" required>
 			</div>
 			<div class="form-group">
-				<label for="batchNumber">Batch Number</label> <input type="text"
+				<label for="batchNumber">Batch Number</label> <input type="number"
 					class="form-control" id="batchNumber" placeholder="batchNumber"
 					name="batchNumber"  required>
 			</div>
@@ -48,15 +48,15 @@
 					placeholder="Enter productName" name="productName" required>
 			</div>
 			<div class="form-group">
-				<label for="quantity">Quantity</label> <input type="text"
+				<label for="quantity">Quantity</label> <input type="number"
 					class="form-control" id="quantity" name="quantity" required>
 			</div>
 			<div class="form-group">
 				<label for="purchaseRate">Purchase Rate</label> <input type="text"
-					class="form-control" id="purchaseRate" name="purchaseRate" required>
+					class="form-control" id="purchaseRate" name="purchaseRate"  type="number" step="any" required>
 			</div>
 			<div class="form-group">
-				<label for="SellingRate">Selling Rate</label> <input type="text"
+				<label for="SellingRate">Selling Rate</label> <input type="number" step="any"
 					class="form-control" id="SellingRate" name="sellingRate" required>
 			</div>
 			<div class="form-group">

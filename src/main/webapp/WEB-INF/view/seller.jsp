@@ -8,6 +8,7 @@
 </head>
 <body>
 	<form action="seller">
+	<h1>Seller</h1>
 			<div class="form-group">
 			<label for="sellerName">Seller Name</label> <input type="text"
 					class="form-control" id="sellerName" placeholder="Name"
@@ -21,6 +22,13 @@
 				<label for="sellerAddress">Seller Address</label> <input type="text"
 					class="form-control" id="sellerAddress" 
 					name="sellerAddress" required></div>
+					<div class="container text-center  mb-5">
+				<button type="submit" class="btn btn-success">Add</button>
+			</div>
 		</form>
+		<form action="sellers">
+		<div class="container text-center  mb-5">
+				<button type="submit" class="btn btn-success" onclick="">Show All Sellers</button>
+			</div></form>
 </body>
 </html>

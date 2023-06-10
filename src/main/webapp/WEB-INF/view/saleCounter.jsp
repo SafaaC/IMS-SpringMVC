@@ -40,12 +40,12 @@
 			
 			
 			<div class="form-group">
-				<label for="pid">Product Id</label> <input type="text"
+				<label for="pid">Product Id</label> <input type="number"
 					class="form-control" id="pid"
-					placeholder="Enter productId" name="pId" required>
+					placeholder="Enter productId" name="pId"   required>
 			</div>
 			<div class="form-group">
-				<label for="quantity">Quantity</label> <input type="text"
+				<label for="quantity">Quantity</label> <input type="number"
 					class="form-control" id="quantity" name="quantity" required>
 			</div>
 

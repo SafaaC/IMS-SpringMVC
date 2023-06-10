@@ -52,7 +52,8 @@
 		</tbody>
 	</table>
 	<div class="container text-center  mb-5">
-				<button type="submit" class="btn btn-success">Submit</button>
+				<button class="btn btn-success"onclick="history.back()">Go Back</button>
+				<button type="submit" class="btn btn-success">Sell</button>
 			</div>
 	
 	</form>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
@@ -19,41 +19,32 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<title>Inventory</title>
+<title>Customers</title>
 </head>
 <body>
-	<h1>Inventory</h1><form action="searchproduct">
-	<input type="text" name="search" placeholder="ProductId or ProductName">
+	<h1>Customers Details</h1><form action="searchcustomer">
+	<input type="text" name="search" placeholder="CustomerName or CustomerID">
 	<button type="submit" >Search</button></form>
 	<table class="table">
 		<thead>
 			<tr>
-				<th scope="col">Product Id</th>
-				<th scope="col">Seller Name</th>
-				<th scope="col">Batch Number</th>
-				<th scope="col">Product Name</th>
-				<th scope="col">Quantity</th>
-				<th scope="col">Purchase Date</th>
-				<th scope="col">Purchase Rate</th>
-				<th scope="col">Selling Rate</th>
-				<th scope="col">Expiry Date</th>
-				<th scope="col">Action</th>
+				<th scope="col">Customer Id</th>
+				<th scope="col">Customer Name</th>
+				<th scope="col">Customer Contact</th>
+				<th scope="col">Customer Address</th>
+				
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${purchases }" var="p">
+			<c:forEach items="${customers}" var="c">
 				<tr>
-					<td>${p.productId }</td>
-					<td>${p.sellerName }</td>
-					<td>${p.batchNumber }</td>
-					<td>${p.productName }</td>
-					<td>${p.quantity }</td>
-					<td>${p.purchaseDate }</td>
-					<td>&#x20B9; ${p.purchaseRate }</td>
-					<td>&#x20B9;${p.sellingRate }</td>
-					<td>${p.expiryDate }</td>
-					<td><a href="delete/${p.productId}"><i class="fa-solid fa-trash-can"></i></a> &nbsp;
-					<a href="update/${p.productId}"><i class="fa-regular fa-pen-to-square"></i></a></td>
+					<td>${c.customerId}</td>
+					<td>${c.customerName}</td>
+					<td>${c.customerContact}</td>
+					<td>${c.customerAddress}</td>
+					
+					<td><a href="cusdelete/${c.customerId}"><i class="fa-solid fa-trash-can"></i></a> &nbsp;
+					<a href="cusupdate/${c.customerId}"><i class="fa-regular fa-pen-to-square"></i></a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

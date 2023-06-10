@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +28,7 @@
 	<h1 class="text-center mb-3">Sale Counter</h1>
 	<div class="container mt-5 w-75">
 		<form action="sales" method="post">
+		<input type="text" value="${s.pId}" name="pId" readonly>
 			<div class="form-group">
 				<label for="date">Date</label> <input type="text"
 					class="form-control" id="date" placeholder="dd/mm/yyyy"
@@ -45,13 +47,13 @@
 			
 			
 			<div class="form-group">
-				<label for="pid">Product Id</label> <input type="text"
+				<label for="pid">Product Id</label> <input type="number"
 					class="form-control" id="pId"
-					placeholder="Enter productId" name="pId" value="${s.pId}" required>
+					placeholder="Enter productId" name="pId" value="${s.pId}"  required>
 			</div>
 			<div class="form-group">
-				<label for="quantity">Quantity</label> <input type="text"
-					class="form-control" id="quantity" name="quantity" value="${s.quantity}" required>
+				<label for="quantity">Quantity</label> <input type="number"
+					class="form-control" id="quantity" name="quantity" value="${s.quantity}"  required>
 			</div>
 			<div class="form-group">
 				<label for="amount">Amount</label> <input type="text"
@@ -59,6 +61,7 @@
 			</div>
 
 			<div class="container text-center  mb-5">
+				<button class="btn btn-success"onclick="history.back()">Go Back</button>
 				<button type="submit" class="btn btn-success">Update</button>
 			</div>
 

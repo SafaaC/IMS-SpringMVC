@@ -41,9 +41,9 @@
 					name="sellerName" value="${p.sellerName}" required>
 			</div>
 			<div class="form-group">
-				<label for="batchNumber">Batch Number</label> <input type="text"
+				<label for="batchNumber">Batch Number</label> <input type="number"
 					class="form-control" id="batchNumber" placeholder="batchNumber"
-					name="batchNumber " value="${p.batchNumber}" required>
+					name="batchNumber " value="${p.batchNumber}"   required>
 			</div>
 			<div class="form-group">
 				<label for="productName">Product Name</label> <input type="text"
@@ -51,16 +51,16 @@
 					placeholder="Enter productName" name="productName" value="${p.productName}" required>
 			</div>
 			<div class="form-group">
-				<label for="quantity">Quantity</label> <input type="text"
-					class="form-control" id="quantity" name="quantity" value="${p.quantity}" required>
+				<label for="quantity">Quantity</label> <input type="number"
+					class="form-control" id="quantity" name="quantity" value="${p.quantity}"  required>
 			</div>
 			<div class="form-group">
-				<label for="purchaseRate">Purchase Rate</label> <input type="text"
-					class="form-control" id="purchaseRate" name="purchaseRate" value="${p.purchaseRate}" required>
+				<label for="purchaseRate">Purchase Rate</label> <input  type="number" step="any"
+					class="form-control" id="purchaseRate" name="purchaseRate" value="${p.purchaseRate}"  required>
 			</div>
 			<div class="form-group">
-				<label for="SellingRate">Selling Rate</label> <input type="text"
-					class="form-control" id="SellingRate" name="sellingRate" value="${p.sellingRate}" required>
+				<label for="SellingRate">Selling Rate</label> <input type="number" step="any"
+					class="form-control" id="SellingRate" name="sellingRate" value="${p.sellingRate}"   required>
 			</div>
 			<div class="form-group">
 				<label for="expiryDate">Expiry Date</label> <input type="text"
@@ -69,6 +69,7 @@
 			</div>
 
 			<div class="container text-center  mb-5">
+			<button class="btn btn-success"onclick="history.back()">Go Back</button>
 				<button type="submit" class="btn btn-success">Update</button>
 			</div>
 

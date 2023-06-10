@@ -10,7 +10,7 @@
 <a class="btn btn-primary" href="saleinput" role="button">saleCounter</a>
 <a class="btn btn-primary" href="inventory" role="button">Inventory</a>
 <a class="btn btn-primary" href="purchaseform" role="button">Purchase</a>
-<a class="btn btn-primary" href="saleinput" role="button">Customer</a>
-<a class="btn btn-primary" href="saleinput" role="button">Seller</a>
+<a class="btn btn-primary" href="customerinput" role="button">Customer</a>
+<a class="btn btn-primary" href="sellerinput" role="button">Seller</a>
 </body>
 </html>
