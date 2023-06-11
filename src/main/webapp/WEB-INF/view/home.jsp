@@ -14,9 +14,12 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-
-<title>
-IMS</title>
+<style type="text/css">
+.a {
+	margin: 20px;
+}
+</style>
+<title>IMS</title>
 <link rel="icon" type="image/x-icon" href="resource/images/icon2.jpg">
 </head>
 <body
@@ -26,8 +29,7 @@ IMS</title>
 			src="resource/images/icon2.jpg" alt="Website Logo">
 		<p>IMS</p>
 		<ul class="nav justify-content-end">
-			<li class="nav-item"><a class="nav-link "
-				href="">Home</a></li>
+			<li class="nav-item"><a class="nav-link " href="">Home</a></li>
 			<li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
 		</ul>
 	</nav>
@@ -37,11 +39,17 @@ IMS</title>
 	<section>
 		<div class="home-page">
 			<div class="button-container">
-				<a class="home-button" href="saleinput" role="button">saleCounter</a>
-				<a class="home-button" href="inventory" role="button">Inventory</a>
-				<a class="home-button" href="purchaseform" role="button">Purchase</a>
-				<a class="home-button" href="customerinput" role="button">Customer</a>
-				<a class="home-button" href="sellerinput" role="button">Seller</a>
+				<a class="a" href="saleinput"><button type="button"
+						class="btn btn-secondary btn-lg">saleCounter</button></a> <a class="a"
+					href="inventory"><button type="button"
+						class="btn btn-secondary btn-lg">Inventory</button></a> <a class="a"
+					href="purchaseform"><button type="button"
+						class="btn btn-secondary btn-lg">Purchase</button></a> <a class="a"
+					href="customerinput"><button type="button"
+						class="btn btn-secondary btn-lg">Customer</button></a> <a class="a"
+					href="sellerinput"><button type="button"
+						class="btn btn-secondary btn-lg">Seller</button></a>
+
 			</div>
 		</div>
 	</section>

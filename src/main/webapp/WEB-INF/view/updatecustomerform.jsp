@@ -33,9 +33,10 @@
 		</ul>
 	</nav>
 	<header>
-		<h1>Update Seller</h1>
+		<h1>Update Customer</h1>
 	</header>
 	<section class="form-section">
+	<div class="container mt-5 w-75">
 	<form action="${pageContext.request.contextPath}/customer">
 	<input type="text" value="${c.customerId}" name="customerId" readonly>
 		<div class="form-group">
@@ -58,9 +59,8 @@
 		</div>
 	</form>
 	<div class="container text-center  mb-5">
-			<button class="btn btn-success" onclick="history.back()">Go
-				Back</button>
-		</div>
+			<button class="btn btn-success" onclick="history.back()">Back</button>
+		</div></div>
 </section>
 <!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

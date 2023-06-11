@@ -23,7 +23,7 @@
 </head>
 <body>
 <nav>
-		<img style="float: left; width: 70px; height: 50px;"
+		<img style="float: left; width: 70px; height: 50px; "
 			src="resource/images/icon2.jpg" alt="Website Logo">
 		<p>IMS</p>
 		<ul class="nav justify-content-end">
@@ -35,8 +35,9 @@
 		<h1>Update Product
 		</h1>
 	</header>
+	</div>
 	<section class="form-section">
-	<div class="container mt-5 w-75">
+	<div class="container mt-5 w-100">
 	
 		<form action="${pageContext.request.contextPath}/purchases" method="post">
 			<input type="text" value="${p.productId}" name="productId" readonly>
@@ -84,9 +85,8 @@
 
 		</form>
 		<div class="container text-center  mb-5">
-			<button class="btn btn-success" onclick="history.back()">Go
-				Back</button>
-		</div>
+			<button class="btn btn-success" onclick="history.back()">Back</button>
+		</div></div>
 	</div></section>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

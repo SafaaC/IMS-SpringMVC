@@ -39,6 +39,7 @@
 		<h1>Update Seller</h1>
 	</header>
 	<section class="form-section">
+	<div class="container mt-5 w-75">
 		<form action="${pageContext.request.contextPath}/seller" method="post">
 
 			<input type="text" value="${s.sellerId}" name="sellerId" readonly>
@@ -62,9 +63,8 @@
 			</div>
 		</form>
 		<div class="container text-center  mb-5">
-			<button class="btn btn-success" onclick="history.back()">Go
-				Back</button>
-		</div>
+			<button class="btn btn-success" onclick="history.back()">Back</button>
+		</div></div>
 	</section>
 <!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

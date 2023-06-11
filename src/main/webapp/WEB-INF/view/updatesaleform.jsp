@@ -5,7 +5,8 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="resource/css/general.css" />
-<link rel="stylesheet" type="text/css" href="resource/css/formsection.css" />
+<link rel="stylesheet" type="text/css"
+	href="resource/css/formsection.css" />
 <link rel="stylesheet" type="text/css" href="resource/css/form.css" />
 <link rel="stylesheet" type="text/css" href="resource/css/button.css" />
 
@@ -30,7 +31,8 @@
 			src="resource/images/icon2.jpg" alt="Website Logo">
 		<p>IMS</p>
 		<ul class="nav justify-content-end">
-			<li class="nav-item"><a class="nav-link " href="/InventoryMngmnt/">Home</a></li>
+			<li class="nav-item"><a class="nav-link "
+				href="/InventoryMngmnt/">Home</a></li>
 			<li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
 		</ul>
 	</nav>
@@ -38,6 +40,7 @@
 		<h1>Update Sale</h1>
 	</header>
 	<section class="form-section">
+		<div class="container mt-5 w-75">
 			<form action="sales" method="post">
 				<div class="form-group">
 					<label for="pId">Product ID</label> <input type="text"
@@ -84,8 +87,8 @@
 
 			</form>
 			<div class="container text-center  mb-5">
-			<button class="btn btn-success" onclick="history.back()">Go
-				Back</button>
+				<button class="btn btn-success" onclick="history.back()">Back</button>
+			</div>
 		</div>
 	</section>
 	<!-- Optional JavaScript -->
