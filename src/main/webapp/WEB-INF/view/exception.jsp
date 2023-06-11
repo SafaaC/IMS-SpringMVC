@@ -26,7 +26,7 @@
 		<h1>Oops! Something went wrong</h1>
 		<p>We apologize for the inconvenience. Please try again later.</p>
 		<p class="error-code">Error 404</p>
-		<a href="home.jsp" class="return-button">Return to Home</a>
+		<a href="/InventoryMngmnt/home.jsp" class="return-button">Return to Home</a>
 	</div>
 
 </body>
