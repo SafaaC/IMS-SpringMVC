@@ -1,0 +1,37 @@
+.table-section {
+  background-color:white;
+  padding: 50px;
+  width: 90%;
+  margin: auto;
+}
+
+.table-section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+  background-color: white;
+}
+
+.table-section th,
+.table-section td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.table-section th {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+.table-section div {
+	 position: absolute;
+  bottom: 0;
+  margin-bottom: 50px;
+}

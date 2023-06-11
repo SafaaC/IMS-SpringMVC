@@ -1,0 +1,20 @@
+.success-message {
+  background-color: white;
+  color: #3c763d;
+ margin-top:100px;
+ text-align:center;
+ justify-content:center;
+ 
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.success-message strong {
+  font-weight: bold;
+}
+
+.success-message::before {
+  content: "\2714";
+  font-size: 18px;
+  margin-right: 8px;
+}

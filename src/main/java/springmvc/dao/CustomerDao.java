@@ -46,7 +46,7 @@ public class CustomerDao {
 		public Customer getByName(String customerName) {
 			List<Customer> customers = this.hibernateTemplate.loadAll(Customer.class);
 			for (Customer customer : customers) {
-				if (customer.getCustomerName().equals(customerName)) {
+				if (customer.getCustomerName().equalsIgnoreCase(customerName)) {
 					return customer;
 				}
 			}

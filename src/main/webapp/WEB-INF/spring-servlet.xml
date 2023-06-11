@@ -16,6 +16,20 @@
 
 	<tx:annotation-driven />
 	<context:component-scan base-package="springmvc"></context:component-scan>
+	
+	<mvc:annotation-driven />
+	<mvc:resources location="/WEB-INF/resource/"
+		mapping="/resource/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/resource/"
+		mapping="sellerupdate/resource/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/resource/"
+		mapping="cusupdate/resource/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/resource/"
+		mapping="updatesale/resource/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/resource/"
+		mapping="update/resource/**"></mvc:resources>
+	
+		
 	<!-- view Resolver -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"

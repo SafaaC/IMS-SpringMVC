@@ -57,7 +57,7 @@ public class PurchaseDao {
 	public Purchase getByName(String productName) {
 		List<Purchase> purchases=this.hibernateTemplate.loadAll(Purchase.class);
 		for(Purchase purchase:purchases) {
-			if(purchase.getProductName().equals(productName)) {
+			if(purchase.getProductName().equalsIgnoreCase(productName)) {
 				return purchase;
 			}	
 		}

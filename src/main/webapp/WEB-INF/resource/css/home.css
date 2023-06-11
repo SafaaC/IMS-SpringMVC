@@ -1,0 +1,29 @@
+
+.home-page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.button-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.home-button {
+	color: #fff;
+  background-color:rgb(225, 225, 225);
+  border: none;
+  padding: 15px 30px; /* Adjust the padding to increase button size */
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 25px; /* Adjust the font size to increase button size */
+  color:gray;
+  width: 200px; /* Optional: Adjust the width to increase button size */
+  height: 60px; /* Optional: Adjust the height to increase button size */
+   text-align: center; /* Center the text horizontally */
+  /* line-height: 60px; /* Center the text vertically by matching line-height with the button height */ 
+}

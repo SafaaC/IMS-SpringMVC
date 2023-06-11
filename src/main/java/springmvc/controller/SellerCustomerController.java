@@ -82,7 +82,7 @@ public class SellerCustomerController {
 	public String updateCustomer(@PathVariable("customerId") int customerId, Model m) {
 		Customer customer = this.customerService.getCustomer(customerId);
 		m.addAttribute("c", customer);
-		return "update_customer_form";
+		return "updatecustomerform";
 	}
 	
 	//mapping to search customer
@@ -95,15 +95,16 @@ public class SellerCustomerController {
 
 			Customer customeri = customerService.getByName(search);
 			if (customeri == null) {
+				m.addAttribute("mssg", "Sorry Mentioned Customer Details is not Available here");
 				return "notfound";
 			} else {
-				m.addAttribute("search", customeri);
-				return "result";
+				m.addAttribute("c", customeri);
+				return "resultcustomer";
 			}
 		}
 
-		m.addAttribute("search", customer);
-		return "result";
+		m.addAttribute("c", customer);
+		return "resultcustomer";
 
 	}
 
@@ -137,9 +138,9 @@ public class SellerCustomerController {
 	public String updateSeller(@PathVariable("sellerId") int sellerId, Model m) {
 		Seller seller = this.sellerService.getSeller(sellerId);
 		m.addAttribute("s", seller);
-		return "update_seller_form";
+		return "updatesellerform";
 	}
-
+	
 	//search handler for seller
 	@RequestMapping(value = "/searchseller")
 	public String searchSeller(Model m, HttpServletRequest request) {
@@ -150,18 +151,19 @@ public class SellerCustomerController {
 
 			Seller selleri = sellerService.getByName(search);
 			if (selleri == null) {
+				m.addAttribute("mssg", "Sorry Mentioned Seller Details is not Available here");
 				return "notfound";
 			} else {
-				m.addAttribute("search", selleri);
-				return "result";
+				m.addAttribute("s", selleri);
+				return "resultseller";
 			}
 		}
 
-		m.addAttribute("search", seller);
-		return "result";
+		m.addAttribute("s", seller);
+		return "resultseller";
 
 	}
-
+	
 	//exception handler
 		@ExceptionHandler(Exception.class)
 		public String exceptionHandler() {

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
@@ -9,7 +9,10 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<link rel="stylesheet" type="text/css" href="resource/css/general.css" />
+<link rel="stylesheet" type="text/css" href="resource/css/table.css" />
+<link rel="stylesheet" type="text/css"
+	href="resource/css/tablesection.css" />
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -19,49 +22,67 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 	crossorigin="anonymous" referrerpolicy="no-referrer" />
-<title>Customers</title>
+<title>IMS</title>
+<link rel="icon" type="image/x-icon" href="resource/images/icon2.jpg">
 </head>
 <body>
-	<h1>Customers Details</h1><form action="searchcustomer">
-	<input type="text" name="search" placeholder="CustomerName or CustomerID">
-	<button type="submit" >Search</button></form>
-	<table class="table">
-		<thead>
-			<tr>
-				<th scope="col">Customer Id</th>
-				<th scope="col">Customer Name</th>
-				<th scope="col">Customer Contact</th>
-				<th scope="col">Customer Address</th>
-				
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${customers}" var="c">
+	<nav>
+		<img style="float: left; width: 70px; height: 50px;"
+			src="resource/images/icon2.jpg" alt="Website Logo">
+		<p>IMS</p>
+		<ul class="nav justify-content-end">
+			<li class="nav-item"><a class="nav-link " href="home.jsp">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
+		</ul>
+	</nav>
+	<header>
+		<h1>Customers Details</h1>
+	</header>
+	<section class="table-section">
+		<form action="searchcustomer">
+			<input type="text" name="search"
+				placeholder="CustomerName or CustomerID">
+			<button type="submit">Search</button>
+		</form>
+		<table class="table">
+			<thead>
 				<tr>
-					<td>${c.customerId}</td>
-					<td>${c.customerName}</td>
-					<td>${c.customerContact}</td>
-					<td>${c.customerAddress}</td>
-					
-					<td><a href="cusdelete/${c.customerId}"><i class="fa-solid fa-trash-can"></i></a> &nbsp;
-					<a href="cusupdate/${c.customerId}"><i class="fa-regular fa-pen-to-square"></i></a></td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+					<th scope="col">Customer Id</th>
+					<th scope="col">Customer Name</th>
+					<th scope="col">Customer Contact</th>
+					<th scope="col">Customer Address</th>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-		crossorigin="anonymous"></script>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${customers}" var="c">
+					<tr>
+						<td>${c.customerId}</td>
+						<td>${c.customerName}</td>
+						<td>${c.customerContact}</td>
+						<td>${c.customerAddress}</td>
+
+						<td><a href="cusdelete/${c.customerId}"><i
+								class="fa-solid fa-trash-can"></i></a> &nbsp; <a
+							href="cusupdate/${c.customerId}"><i
+								class="fa-regular fa-pen-to-square"></i></a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+</section>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+			integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+			integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+			crossorigin="anonymous"></script>
 </body>
 </html>

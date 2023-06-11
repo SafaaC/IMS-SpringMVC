@@ -1,27 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
-<html lang="en">
+<html>
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" type="text/css" href="resource/css/general.css" />
-<link rel="stylesheet" type="text/css" href="resource/css/table.css" />
-<link rel="stylesheet" type="text/css"
-	href="resource/css/tablesection.css" />
+
+<link rel="stylesheet" type="text/css" href="resource/css/form.css" />
+<link rel="stylesheet" type="text/css" href="resource/css/button.css" />
 <!-- Bootstrap CSS -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-	integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style type="text/css">
+div{
+ margin-left: 400px;
+ font-size: 20px;
+}
+
+</style>
 <title>IMS</title>
 <link rel="icon" type="image/x-icon" href="resource/images/icon2.jpg">
 </head>
@@ -31,45 +33,27 @@
 			src="resource/images/icon2.jpg" alt="Website Logo">
 		<p>IMS</p>
 		<ul class="nav justify-content-end">
-			<li class="nav-item"><a class="nav-link " href="home.jsp">Home</a></li>
+			<li class="nav-item"><a class="nav-link "
+				href="/InventoryMngmnt/">Home</a></li>
 			<li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
 		</ul>
 	</nav>
 	<header>
-		<h1>Sellers Details</h1>
+		<h1>Search</h1>
 	</header>
-	<section class="table-section">
+	<section class="form-section">
+	<h2 class="mt-5 mb-5" style="text-align: center;">Customer Details</h2>
+		<div class="container w-75">
+		<div class="form-group">Customer Id : ${c.customerId}</div>
+		<div class="form-group">Customer Name : ${c.customerName}</div>
+		<div class="form-group">Customer Contact : ${c.customerContact}</div>
+		<div class="form-group">Customer Address : ${c.customerAddress}</div>
 		
-		<form action="searchseller">
-			<input type="text" name="search" placeholder="SellerName or SellerID">
-			<button type="submit">Search</button>
-		</form>
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col">Seller Id</th>
-					<th scope="col">Seller Name</th>
-					<th scope="col">Seller Contact</th>
-					<th scope="col">Seller Address</th>
-
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${sellers}" var="s">
-					<tr>
-						<td>${s.sellerId }</td>
-						<td>${s.sellerName }</td>
-						<td>${s.sellerContact }</td>
-						<td>${s.sellerAddress }</td>
-
-						<td><a href="sellerdelete/${s.sellerId}"><i
-								class="fa-solid fa-trash-can"></i></a> &nbsp; <a
-							href="sellerupdate/${s.sellerId}"><i
-								class="fa-regular fa-pen-to-square"></i></a></td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+		<div class="container text-center  mb-5">
+			<button class="btn btn-success" onclick="history.back()">Go
+				Back</button>
+		</div>
+		</div>
 	</section>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -89,7 +89,7 @@ public class PurchaseSellController {
 	public String update(@PathVariable("productId") int productId, Model m) {
 		Purchase purchase = purchaseServive.readPurchase(productId);
 		m.addAttribute("p", purchase);
-		return "update_form";
+		return "updateform";
 	}
 
 	// SALES HANDLERS
@@ -135,7 +135,7 @@ public class PurchaseSellController {
 	public String updateSale(@PathVariable("pId") int pId, Model m) {
 		Sale sale = saleService.readSale(pId);
 		m.addAttribute("s", sale);
-		return "update_sale_form";
+		return "updatesaleform";
 	}
 
 	//after sale update inventory data
@@ -177,15 +177,16 @@ public class PurchaseSellController {
 
 			Purchase purchasei = purchaseServive.getBySName(search);
 			if (purchasei == null) {
+				m.addAttribute("mssg", "Sorry No such Product is Available here");
 				return "notfound";
 			} else {
-				m.addAttribute("search", purchasei);
-				return "result";
+				m.addAttribute("p", purchasei);
+				return "resultproduct";
 			}
 		}
 
-		m.addAttribute("search", purchase);
-		return "result";
+		m.addAttribute("p", purchase);
+		return "resultproduct";
 
 	}
 	

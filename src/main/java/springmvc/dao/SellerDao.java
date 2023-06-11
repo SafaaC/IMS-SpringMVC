@@ -47,7 +47,7 @@ public class SellerDao {
 	public Seller getByName(String sellerName) {
 		List<Seller> sellers = this.hibernateTemplate.loadAll(Seller.class);
 		for (Seller seller : sellers) {
-			if (seller.getSellerName().equals(sellerName)) {
+			if (seller.getSellerName().equalsIgnoreCase(sellerName)) {
 				return seller;
 			}
 		}

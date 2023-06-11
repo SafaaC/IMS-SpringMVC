@@ -31,47 +31,42 @@
 		<p>IMS</p>
 		<ul class="nav justify-content-end">
 			<li class="nav-item"><a class="nav-link "
-				href="home.jsp">Home</a></li>
+				href="/InventoryMngmnt/">Home</a></li>
 			<li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
 		</ul>
 	</nav>
 	<header>
-		<h1>Sale Counter</h1>
+		<h1>Update Seller</h1>
 	</header>
 	<section class="form-section">
+		<form action="${pageContext.request.contextPath}/seller" method="post">
 
-		<div class="container mt-5 w-75">
-			<form action="salesave" method="post">
-				<div class="form-group">
-					<label for="date">Date</label> <input type="text"
-						class="form-control" id="date" placeholder="dd/mm/yyyy"
-						name="date">
-				</div>
-				<div class="form-group">
-					<label for="customerName">Customer Name</label> <input type="text"
-						class="form-control" id="customerName" placeholder="customerName"
-						name="customerName" required>
-				</div>
-
-
-				<div class="form-group">
-					<label for="pid">Product Id</label> <input type="number"
-						class="form-control" id="pid" placeholder="Enter productId"
-						name="pId" required>
-				</div>
-				<div class="form-group">
-					<label for="quantity">Quantity</label> <input type="number"
-						class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity"  required>
-				</div>
-
-				<div class="container text-center  mb-5">
-					<button type="submit" class="btn btn-success">Add to Cart</button>
-				</div>
-
-			</form>
+			<input type="text" value="${s.sellerId}" name="sellerId" readonly>
+			<div class="form-group">
+				<label for="sellerName">Seller Name</label> <input type="text"
+					class="form-control" id="sellerName" placeholder="Name"
+					name="sellerName" value="${s.sellerName}" required>
+			</div>
+			<div class="form-group">
+				<label for="sellerContact">Seller Contact</label> <input type="text"
+					class="form-control" id="sellerContact" name="sellerContact"
+					value="${s.sellerContact}" required>
+			</div>
+			<div class="form-group">
+				<label for="sellerAddress">Seller Address</label> <input type="text"
+					class="form-control" id="sellerAddress" name="sellerAddress"
+					value="${s.sellerAddress}" required>
+			</div>
+			<div class="container text-center  mb-5">
+				<button type="submit" class="btn btn-success">Update</button>
+			</div>
+		</form>
+		<div class="container text-center  mb-5">
+			<button class="btn btn-success" onclick="history.back()">Go
+				Back</button>
 		</div>
 	</section>
-	<!-- Optional JavaScript -->
+<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
