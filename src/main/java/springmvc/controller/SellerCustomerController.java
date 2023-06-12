@@ -164,9 +164,10 @@ public class SellerCustomerController {
 
 	}
 	
-	//exception handler
-		@ExceptionHandler(Exception.class)
-		public String exceptionHandler() {
-			return "exception";
-		}
+	/*
+	 * //exception handler
+	 * 
+	 * @ExceptionHandler(Exception.class) public String exceptionHandler() { return
+	 * "exception"; }
+	 */
 }

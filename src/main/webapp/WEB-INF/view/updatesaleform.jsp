@@ -41,7 +41,7 @@
 	</header>
 	<section class="form-section">
 		<div class="container mt-5 w-75">
-			<form action="sales" method="post">
+			<form action="/InventoryMngmnt/salesave" method="post">
 				<div class="form-group">
 					<label for="pId">Product ID</label> <input type="text"
 						class="form-control" id="pId" placeholder="productID" name="pId"
