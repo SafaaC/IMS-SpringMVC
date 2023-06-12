@@ -93,7 +93,7 @@ public class SellerCustomerController {
 		Customer customer = customerService.getByName(search);
 		if (customer == null) {
 
-			Customer customeri = customerService.getByName(search);
+			Customer customeri = customerService.getBySName(search);
 			if (customeri == null) {
 				m.addAttribute("mssg", "Sorry Mentioned Customer Details is not Available here");
 				return "notfound";
@@ -149,7 +149,7 @@ public class SellerCustomerController {
 		Seller seller = sellerService.getByName(search);
 		if (seller == null) {
 
-			Seller selleri = sellerService.getByName(search);
+			Seller selleri = sellerService.getBySName(search);
 			if (selleri == null) {
 				m.addAttribute("mssg", "Sorry Mentioned Seller Details is not Available here");
 				return "notfound";

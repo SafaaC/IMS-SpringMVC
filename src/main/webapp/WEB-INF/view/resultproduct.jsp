@@ -44,6 +44,7 @@ div {
 	<section class="form-section">
 		<h2 style="text-align: center;">Product Details</h2>
 		<div class="container w-75">
+		<form action="${pageContext.request.contextPath}/purchases" method="post">
 			<div class="form-group">ProductId : ${p.productId}</div>
 			<div class="form-group">Date : ${p.purchaseDate}</div>
 			<div class="form-group">Seller Name : ${p.sellerName}</div>
@@ -53,6 +54,10 @@ div {
 			<div class="form-group">Purchase Rate : ${p.purchaseRate}</div>
 			<div class="form-group">Selling Rate : ${p.sellingRate}</div>
 			<div class="form-group">Expiry Date : ${p.expiryDate}</div>
+			<div class="container text-center  mb-5">
+				<button type="submit" class="btn btn-success">Update</button>
+			</div>
+	</form>
 			<div class="container text-center  mb-5">
 				<button class="btn btn-success" onclick="history.back()">Go
 					Back</button>

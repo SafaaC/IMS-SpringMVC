@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import springmvc.dao.CustomerDao;
 import springmvc.model.Customer;
 import springmvc.model.Purchase;
+import springmvc.model.Seller;
 
 @Service
 public class CustomerServive {
@@ -40,5 +41,8 @@ public class CustomerServive {
 	public void RemoveCustomer(int customerId) {
 
 		this.customerDao.deleteCustomer(customerId);
+	}
+	public Customer getBySName(String customerId) {
+		return this.customerDao.getbySName(customerId);
 	}
 }

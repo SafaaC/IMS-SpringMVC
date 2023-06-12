@@ -41,4 +41,7 @@ public class SellerService {
 	public Seller getByName(String sellerName) {
 		return this.sellerDao.getByName(sellerName);
 	}
+	public Seller getBySName(String sellerId) {
+		return this.sellerDao.getbySName(sellerId);
+	}
 }

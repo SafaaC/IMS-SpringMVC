@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import springmvc.model.Customer;
+import springmvc.model.Purchase;
 import springmvc.model.Sale;
 import springmvc.model.Seller;
 @Repository
@@ -49,6 +50,17 @@ public class CustomerDao {
 				if (customer.getCustomerName().equalsIgnoreCase(customerName)) {
 					return customer;
 				}
+			}
+			return null;
+		}
+		@Transactional
+		public Customer getbySName(String customerId) {
+			List<Customer> customers=this.hibernateTemplate.loadAll(Customer.class);
+			for(Customer customer:customers) {
+				String s=Integer.toString(customer.getCustomerId());
+				if(s.equals(customerId)) {
+					return customer;
+				}	
 			}
 			return null;
 		}

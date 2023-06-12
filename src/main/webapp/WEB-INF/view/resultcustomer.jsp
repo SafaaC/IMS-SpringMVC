@@ -44,11 +44,15 @@ div{
 	<section class="form-section">
 	<h2 class="mt-5 mb-5" style="text-align: center;">Customer Details</h2>
 		<div class="container w-75">
+		<form action="${pageContext.request.contextPath}/customer" method="post">
 		<div class="form-group">Customer Id : ${c.customerId}</div>
 		<div class="form-group">Customer Name : ${c.customerName}</div>
 		<div class="form-group">Customer Contact : ${c.customerContact}</div>
 		<div class="form-group">Customer Address : ${c.customerAddress}</div>
-		
+		<div class="container text-center  mb-5">
+				<button type="submit" class="btn btn-success">Update</button>
+			</div>
+	</form>
 		<div class="container text-center  mb-5">
 			<button class="btn btn-success" onclick="history.back()">Go
 				Back</button>
