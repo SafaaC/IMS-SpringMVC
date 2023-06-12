@@ -41,26 +41,28 @@ public class SellerCustomerController {
 	public void setSellerService(SellerService sellerService) {
 		this.sellerService = sellerService;
 	}
-	//Mapping To customer form
+
+	// Mapping To customer form
 	@RequestMapping("/customerinput")
 	public String customerform() {
 		return "customer";
 	}
 
-	//mapping to seller form
+	// mapping to seller form
 	@RequestMapping("/sellerinput")
 	public String sellerform() {
 		return "seller";
 	}
-	
-	//mapping after add customer in form
+
+	// mapping after add customer in form
 	@RequestMapping(value = "/customer")
 	public String customer(@ModelAttribute("customer") Customer customer, Model model) {
 		customerService.createCustomer(customer);
 		model.addAttribute("mssg", "Customer Added Successfull");
 		return "success";
 	}
-	//mapping to all customers details
+
+	// mapping to all customers details
 	@RequestMapping(value = "/customers"/* , method = RequestMethod.POST */ )
 	public String customers(Model m) {
 		List<Customer> customers = customerService.readCustomers();
@@ -76,16 +78,16 @@ public class SellerCustomerController {
 		redirectView.setUrl(req.getContextPath() + "/customers");
 		return redirectView;
 	}
-	
-	//upadte handler for customers
+
+	// upadte handler for customers
 	@RequestMapping(value = "/cusupdate/{customerId}")
 	public String updateCustomer(@PathVariable("customerId") int customerId, Model m) {
 		Customer customer = this.customerService.getCustomer(customerId);
 		m.addAttribute("c", customer);
 		return "updatecustomerform";
 	}
-	
-	//mapping to search customer
+
+	// mapping to search customer
 	@RequestMapping(value = "/searchcustomer")
 	public String searchCustomer(Model m, HttpServletRequest request) {
 
@@ -108,15 +110,15 @@ public class SellerCustomerController {
 
 	}
 
-	//mapping after add seller form
+	// mapping after add seller form
 	@RequestMapping(value = "/seller")
 	public String seller(@ModelAttribute("seller") Seller seller, Model model) {
 		sellerService.createSeller(seller);
 		model.addAttribute("mssg", "Customer Added Successfull");
 		return "success";
 	}
-	
-	//mapping to all cutomer details
+
+	// mapping to all cutomer details
 	@RequestMapping(value = "/sellers"/* , method = RequestMethod.POST */ )
 	public String sellers(Model m) {
 		List<Seller> sellers = sellerService.readSellers();
@@ -132,16 +134,16 @@ public class SellerCustomerController {
 		redirectView.setUrl(req.getContextPath() + "/sellers");
 		return redirectView;
 	}
-	
-	//update handler for seller
+
+	// update handler for seller
 	@RequestMapping(value = "/sellerupdate/{sellerId}")
 	public String updateSeller(@PathVariable("sellerId") int sellerId, Model m) {
 		Seller seller = this.sellerService.getSeller(sellerId);
 		m.addAttribute("s", seller);
 		return "updatesellerform";
 	}
-	
-	//search handler for seller
+
+	// search handler for seller
 	@RequestMapping(value = "/searchseller")
 	public String searchSeller(Model m, HttpServletRequest request) {
 
@@ -163,11 +165,11 @@ public class SellerCustomerController {
 		return "resultseller";
 
 	}
-	
-	/*
-	 * //exception handler
-	 * 
-	 * @ExceptionHandler(Exception.class) public String exceptionHandler() { return
-	 * "exception"; }
-	 */
+
+	// exception handler
+	@ExceptionHandler(Exception.class)
+	public String exceptionHandler() {
+		return "exception";
+	}
+
 }

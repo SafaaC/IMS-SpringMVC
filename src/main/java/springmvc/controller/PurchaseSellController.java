@@ -46,7 +46,7 @@ public class PurchaseSellController {
 	public String home() {
 		return "home";
 	}
-	
+
 	@RequestMapping("/purchaseform")
 	public String purchaseform() {
 		return "purchases";
@@ -56,8 +56,8 @@ public class PurchaseSellController {
 	public String saleform() {
 		return "saleCounter";
 	}
-	
-	//mapping after adding purchase detail
+
+	// mapping after adding purchase detail
 	@RequestMapping(value = "/purchases", method = RequestMethod.POST)
 	public String purchases(@ModelAttribute("purchase") Purchase purchase, Model model) {
 
@@ -65,8 +65,8 @@ public class PurchaseSellController {
 		model.addAttribute("mssg", "Purchase Successfull");
 		return "success";
 	}
-	
-	//mapping to view inventory details
+
+	// mapping to view inventory details
 	@RequestMapping(value = "/inventory"/* , method = RequestMethod.POST */ )
 	public String inventory(Model m) {
 		List<Purchase> purchases = purchaseServive.readPurchases();
@@ -83,8 +83,8 @@ public class PurchaseSellController {
 		redirectView.setUrl(req.getContextPath() + "/inventory");
 		return redirectView;
 	}
-	
-	//update handler for purchased product
+
+	// update handler for purchased product
 	@RequestMapping(value = "/update/{productId}")
 	public String update(@PathVariable("productId") int productId, Model m) {
 		Purchase purchase = purchaseServive.readPurchase(productId);
@@ -93,8 +93,8 @@ public class PurchaseSellController {
 	}
 
 	// SALES HANDLERS
-	
-	//mapping to view all sale details and sell it
+
+	// mapping to view all sale details and sell it
 	@RequestMapping(value = "/sale"/* , method = RequestMethod.POST */ )
 	public String sale(Model m) {
 		List<Sale> sales = this.saleService.readSales();
@@ -102,7 +102,8 @@ public class PurchaseSellController {
 		return "sale";
 	}
 
-	//take inpute from sale counter and save it and redirect back to all sale details view 
+	// take inpute from sale counter and save it and redirect back to all sale
+	// details view
 	@RequestMapping(value = "/salesave", method = RequestMethod.POST)
 	public String sales(@RequestParam("date") String date, @RequestParam("customerName") String customerName,
 			@RequestParam("pId") int pId, @RequestParam("quantity") int quantity, Model model) {
@@ -119,8 +120,8 @@ public class PurchaseSellController {
 		return "redirect:/sale";
 
 	}
-	
-	//delete handler for sale
+
+	// delete handler for sale
 	@RequestMapping(value = "/deletesale/{pId}")
 	public RedirectView deleteSale(@PathVariable("pId") int pId, HttpServletRequest req) {
 		this.saleService.RemoveSale(pId);
@@ -130,7 +131,7 @@ public class PurchaseSellController {
 		return redirectView;
 	}
 
-	//update handler for sale
+	// update handler for sale
 	@RequestMapping(value = "/updatesale/{pId}")
 	public String updateSale(@PathVariable("pId") int pId, Model m) {
 		Sale sale = saleService.readSale(pId);
@@ -138,7 +139,7 @@ public class PurchaseSellController {
 		return "updatesaleform";
 	}
 
-	//after sale update inventory data
+	// after sale update inventory data
 	@RequestMapping(value = "/saleinventory")
 	public String saleInventory(Model m) {
 		List<Sale> sales = saleService.readSales();
@@ -159,7 +160,7 @@ public class PurchaseSellController {
 						return "error";
 					}
 				}
-				
+
 			}
 
 		}
@@ -168,7 +169,7 @@ public class PurchaseSellController {
 		return "success";
 	}
 
-	//search handler for products in inventory
+	// search handler for products in inventory
 	@RequestMapping(value = "/searchproduct")
 	public String search(Model m, HttpServletRequest request) {
 
@@ -191,10 +192,10 @@ public class PurchaseSellController {
 
 	}
 	
-	/*
-	 * //exception handler
-	 * 
-	 * @ExceptionHandler(Exception.class) public String exceptionHandler() { return
-	 * "exception"; }
-	 */
+	 
+	 //exception handler
+	
+	 @ExceptionHandler(Exception.class) public String exceptionHandler() { return
+	 "exception"; }
+	
 }
