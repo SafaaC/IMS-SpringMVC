@@ -32,7 +32,7 @@
 		</ul>
 	</nav>
 	<section class="error-page"><div>
-		<h1>Oops! Something went wrong ${mssg } ${q}</h1>
+		<h1>Oops! Something went wrong ${mss } ${quantity}</h1>
 		<a href="home.jsp" class="return-button">Return to Home</a>
 		<div >
 		<button onclick="history.back()">Go Back</button>

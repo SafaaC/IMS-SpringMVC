@@ -109,7 +109,7 @@ public class PurchaseSellController {
 		String productName = purchaseServive.getNameById(pId);
 		double sellingRate = purchaseServive.getPriceById(pId);
 		if (productName == null) {
-			model.addAttribute("mssg", "No Product Found !!! please recheck the product id");
+			model.addAttribute("mss", "No Product Found !!! please recheck the product id");
 			return "error";
 		}
 		double amount = quantity * sellingRate;
@@ -159,6 +159,7 @@ public class PurchaseSellController {
 						return "error";
 					}
 				}
+				
 			}
 
 		}
